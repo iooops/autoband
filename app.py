@@ -2,7 +2,8 @@
 import sys
 sys.path.insert(0, "./modules")
 
-from flask import Flask, jsonify
+
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -24,6 +25,6 @@ def gen_drum_groove():
 	req = request.get_json()
 	tap_sounds = req.get('tap_sounds')
 	# TODO: generate drum groove here
-	return 'generated drum groove here'
+	return 'generated drum groove here ' + tap_sounds
 
 
